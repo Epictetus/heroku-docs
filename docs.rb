@@ -3,7 +3,7 @@ require 'sinatra'
 require 'haml'
 require 'sass'
 require 'indextank'
-require 'topic'
+require './topic'
 
 require 'heroku/nav'
 use Heroku::Nav::Header

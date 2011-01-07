@@ -1,14 +1,12 @@
 source :gemcutter
 
-gem 'thin'
-gem 'rack', '1.2.1'
-gem 'sinatra', '0.9.4'
+gem 'thin', '1.2.7'
+gem 'sinatra', '1.1.0'
 gem 'rdiscount', '1.3.5'
 gem 'rest-client', '1.2.0'
 gem 'haml', '2.2.17'
 gem 'json'
-gem 'thin'
-gem 'heroku-nav', '~>0'
+gem 'heroku-nav', '0.1.20'
 gem 'newrelic_rpm'
 gem 'nokogirl'
 gem 'coderay'

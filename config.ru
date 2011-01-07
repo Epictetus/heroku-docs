@@ -1,6 +1,3 @@
-require 'rubygems'
 require 'bundler/setup'
-
-require 'docs'
-
+require './docs'
 run Sinatra::Application
