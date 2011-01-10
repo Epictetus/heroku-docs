@@ -1,3 +1,5 @@
+Encoding.default_external = Encoding.default_internal = 'utf-8'
+
 require 'rdiscount'
 
 class Topic
