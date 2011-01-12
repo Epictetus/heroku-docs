@@ -74,7 +74,6 @@ section 'add-ons', "Add-ons" do
 	topic 'redistogo',          'Redis To Go'
 	topic 'sendgrid',           'Sendgrid SMTP'
 	topic 'ssl',                'SSL'
-	topic 'ticketly'            'Ticketly'
 	topic 'websolr',            'Websolr search'
 	topic 'zerigo',             'Zerigo DNS'
 end
