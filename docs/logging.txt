@@ -6,11 +6,6 @@ Heroku's logging add-on routes together logs from your application and Heroku's 
 Setup
 -----
 
-Install the logging client plugin:
-
-    :::term
-    $ heroku plugins:install http://github.com/heroku/heroku-logging.git
-
 Add the add-on to your app:
 
     :::term
