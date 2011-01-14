@@ -23,7 +23,10 @@ Anything written to standard out (`stdout`) or standard error (`stderr`) is capt
 If you are using Rails, add this to your `config/application.rb` (Rails 3) or `config/environment.rb` (Rails 2) initializer block:
 
     :::ruby
-    config.action_controller.logger = Logger.new(STDOUT)
+    config.logger    = Logger.new(STDOUT)
+    config.log_level = :info
+
+This will send all the log output from Rails to STDOUT including exceptions.
 
 Log retrieval
 -------------
