@@ -57,8 +57,20 @@ If you later on remove the add-on, you will automatically get a PostgreSQL datab
 
 NOTE: If you did not transfer your database and schema, remember to run "heroku rake db:migrate" after you add the add-on.
 
+Changing Your Credentials
+-------------------------
+
+If you wish to change your RDS credentials, you can do so from the console. Log in with your current account credentials with:
+
+    :::term
+    $ mysql -h myinstance.mydnsnameexample.rds.amazonaws.com -P 3306 -u mymasteruser -p
+
+NOTE: If you get an error (ERROR 2003 ... (60)), you most likely need to authorize your local computer's IP address for your DB instance's security group, as described in [this thread](https://forums.aws.amazon.com/thread.jspa?threadID=49488&tstart=0&messageID=195944).
+
+Once you've logged in, you can update your master account credentials as described in the [MySQL documentation](http://dev.mysql.com/doc/refman/5.1/en/assigning-passwords.html).
+
 Migrating to a New Instance
-------------------------
+---------------------------
 
 In some cases, you may want to change the RDS instance your Heroku app points to. The easiest way to do that is to:
 
