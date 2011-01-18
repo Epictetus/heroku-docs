@@ -21,12 +21,12 @@ If you are migrating from Heroku's built in PostgreSQL database to RDS, you may 
 
     :::term
     rds-authorize-db-security-group-ingress default --cidr-ip 1.1.1.1/32
-    
+
 Now you can use [taps](taps) to pull from your Heroku database to your RDS database:
 
     :::term
     heroku db:pull mysql://user:pass@rdshostname.amazonaws.com/databasename
-    
+
 Configuring the add-on
 ----------------------
 
@@ -36,7 +36,7 @@ Heroku needs to be able to access your RDS instance. To allow Heroku's cloud thr
     rds-authorize-db-security-group-ingress default \
         --ec2-security-group-name default \
         --ec2-security-group-owner-id 098166147350
-    
+
 NOTE: If you have multiple RDS security groups, you can specify the desired group instead of "default".
 
 NOTE: Your RDS instance will need to be in the us-east Amazon region to use Heroku's security group to control access.
@@ -46,14 +46,29 @@ Once authorized, you can add the add-on using the connection information for you
     :::term
     $ heroku addons:add amazon_rds url=mysql://user:pass@rdshostname.amazonaws.com/databasename
     Adding amazon_rds to appname...Done.
-    
+
 That's it! Your Heroku app should now be using your Amazon RDS database. If you check your config variables, you will see the DATABASE_URL changed:
 
     :::term
     $ heroku config
     DATABASE_URL => mysql://user:...zonaws.com/database
 
-If you later on remove the add-on, you will automatically get a PostgreSQL database assigned.    
+If you later on remove the add-on, you will automatically get a PostgreSQL database assigned.
 
 NOTE: If you did not transfer your database and schema, remember to run "heroku rake db:migrate" after you add the add-on.
 
+Migrating to a New Instance
+------------------------
+
+In some cases, you may want to change the RDS instance your Heroku app points to. The easiest way to do that is to:
+
+  1. Log in to the [AWS console](http://aws.amazon.com/console/) and click on the RDS tab.
+  2. Select the instance you want to change.
+  3. Click the Take Snapshot button.
+  4. Once the snapshot is finished, select it and click the Restore From DB Snapshot button.
+  5. Fill out the fields to create your new instance.
+  6. After the new instance has been created, update your Heroku application config variables to use the new URL:
+
+      $ heroku config:add DATABASE_URL=mysql://user:pass@rdshostname.amazonaws.com/databasename
+
+  7. Test your application to make sure that everything works properly; assuming it does, you can now safely return to the AWS console and delete your original DB instance.

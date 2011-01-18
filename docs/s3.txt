@@ -84,7 +84,7 @@ This is done with [S3 SWF Upload Plugin](http://github.com/GreenAsJade/s3-swf-up
 
 
 Updating Your S3 Credentials
---------------------
+----------------------------
 
 If you find that you need to update your S3 access credentials, start by visiting your [Security Credentials](http://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key) page in the AWS portal. In the Access Credentials section, you'll see a tabbed panel.
 
