@@ -79,9 +79,5 @@ In some cases, you may want to change the RDS instance your Heroku app points to
   3. Click the Take Snapshot button.
   4. Once the snapshot is finished, select it and click the Restore From DB Snapshot button.
   5. Fill out the fields to create your new instance.
-  6. After the new instance has been created, update your Heroku application config variables to use the new URL:
-
-    :::term
-    $ heroku config:add DATABASE_URL=mysql://user:pass@rdshostname.amazonaws.com/databasename
-
+  6. After the new instance has been created, update your Heroku application config variables to use the new URL.
   7. Test your application to make sure that everything works properly; assuming it does, you can now safely return to the AWS console and delete your original DB instance.
