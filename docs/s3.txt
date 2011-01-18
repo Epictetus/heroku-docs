@@ -86,8 +86,8 @@ This is done with [S3 SWF Upload Plugin](http://github.com/GreenAsJade/s3-swf-up
 Updating Your S3 Credentials
 --------------------
 
-If you find that you need to update your S3 access credentials, start by visiting your [Security Credentials](http://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key) page in the AWS portal. In the Access Credentials section, you'll see a tabbed panel. From here, you can deactivate your current key (and, once it's inactive, delete it if you choose) and create a new one.
+If you find that you need to update your S3 access credentials, start by visiting your [Security Credentials](http://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key) page in the AWS portal. In the Access Credentials section, you'll see a tabbed panel.
 
 <img src="http://heroku.images.s3.amazonaws.com/docs/credentials.png" alt="Manage S3 credentials" style="border:2px solid #eee; padding:5px;" />
 
-Once you've got your new access key, grab the secret (click on the Show link) and update your code or config vars appropriately.
+AWS allows you to have two access keys at a time, so (assuming you've only got one, as in the screenshot here) go ahead and create a new one. Update your Heroku application with the new credentials, and be sure to test that they work. Then, you're free to return to the AWS portal and deactivate (and delete) your older key.
