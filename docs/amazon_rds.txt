@@ -65,7 +65,7 @@ If you wish to change your RDS credentials, you can do so from the console. Log 
     :::term
     $ mysql -h myinstance.mydnsnameexample.rds.amazonaws.com -P 3306 -u mymasteruser -p
 
-NOTE: If you get an error (ERROR 2003 ... (60)), you most likely need to authorize your local computer's IP address for your DB instance's security group, as described in [this thread](https://forums.aws.amazon.com/thread.jspa?threadID=49488&tstart=0&messageID=195944).
+NOTE: If you get an error (ERROR 2003 ... (60)), you most likely need to authorize your local computer's IP address for your DB instance's security group, as described in <a href="https://forums.aws.amazon.com/thread.jspa?threadID=49488&tstart=0&messageID=195944">this thread</a>).
 
 Once you've logged in, you can update your master account credentials as described in the [MySQL documentation](http://dev.mysql.com/doc/refman/5.1/en/assigning-passwords.html).
 
