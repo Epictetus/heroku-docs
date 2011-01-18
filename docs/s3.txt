@@ -33,12 +33,12 @@ Configuration is done in `config/amazon_s3.yml`:
       bucket_name: myappdevelopment
       access_key_id: <your key>
       secret_access_key: <your key>
-    
+
     test:
       bucket_name: myapptest
       access_key_id: <your key>
       secret_access_key: <your key>
-    
+
     production:
       bucket_name: myapp
       access_key_id: <your key>
@@ -50,9 +50,9 @@ Very similar setup: add `aws-s3` to your [gem manifest](/gems), set the storage 
 
     :::ruby
     class User
-      has_attached_file :photo, 
-          :storage => :s3, 
-          :s3_credentials => "#{RAILS_ROOT}/config/s3.yml", 
+      has_attached_file :photo,
+          :storage => :s3,
+          :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
           :path => "/:style/:filename"
     end
 
@@ -88,6 +88,6 @@ Updating Your S3 Credentials
 
 If you find that you need to update your S3 access credentials, start by visiting your [Security Credentials](http://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key) page in the AWS portal. In the Access Credentials section, you'll see a tabbed panel. From here, you can deactivate your current key (and, once it's inactive, delete it if you choose) and create a new one.
 
-![Manage credentials](http://heroku.images.s3.amazonaws.com/docs/credentials.png)
+<img src="http://heroku.images.s3.amazonaws.com/docs/credentials.png" alt="Manage S3 credentials" style="border:2px solid #eee; padding:5px;" />
 
 Once you've got your new access key, grab the secret (click on the Show link) and update your code or config vars appropriately.
