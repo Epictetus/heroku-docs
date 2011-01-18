@@ -1,7 +1,9 @@
 PostgreSQL by Heroku
 ====================
 
-The Heroku PostgreSQL add-on is our next generation of our dedicated database service. Unlike the previous generation database service, it is provisioned and managed as an add-on. Please note that all of these database plans incur non-trivial charges. 
+The Heroku PostgreSQL add-on is our next generation of our dedicated database service. Unlike the previous generation database service, it is provisioned and managed as an add-on.
+
+NOTE: Please note that all of these database plans incur non-trivial charges.
 
 Installation
 ------------
