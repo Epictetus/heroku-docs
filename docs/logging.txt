@@ -60,9 +60,10 @@ The logs command fetches 20 lines of logs by default.  You can fetch up to 500 l
 Realtime tail
 -------------
 
-Realtime tailing of your app logs is a powerful way to get insight into the behavior of your live application, and to debug current problems.  For a realtime tail use the `--tail` (or `-t`) option:
+Realtime tailing of your app logs is a powerful way to get insight into the behavior of your live application, and to debug current problems. For a realtime tail, you'll need to be on the expanded logging plan; after that, you just use `--tail` or `-t`.
 
     :::term
+    $ heroku addons:upgrade logging:expanded
     $ heroku logs --tail
 
 Similar to `tail -f`, this will show you recent logs and leave the session open for realtime logs to stream in.  Press Ctrl-C when done.
